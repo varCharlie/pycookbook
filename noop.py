@@ -16,11 +16,13 @@ def noop(func):
         else:
             text += '{}('.format('.'.join((func.__module__, func.__name__)))
         if args:
-            text += ', '.join("'{}'".format(_) for _ in args)
+            text += ', '.join("'{}'".format(_) if isinstance(_, str) else str(_)
+                                for _ in args)
         if kwds:
             if args:
                 text += ', '
-            text += ', '.join('{}={}'.format(k, v) for k, v in kwds.iteritems())
+            text += ', '.join('{}={}'.format(k, "'%s'" % v if isinstance(v, str) else v)
+                                for k, v in kwds.iteritems())
         text += ')\n'
         sys.stderr.write(text)
         return None
