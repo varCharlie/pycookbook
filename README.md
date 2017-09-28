@@ -1,6 +1,9 @@
 # pycookbook
 This is meant to be a repository to store useful or useless code written in python.
 
+## noop.py
+Sometimes it is useful to add a 'noop' flag to a programs options. This module contains a decorator `noop` which will write functions to stderr instead of executing them. It is useful to make sure your code is sane before running it, when running it may have irreversable side effects. Consider code that may send a network packet or even wipe a computer clean, overwriting the harddrive with 0s.
+
 ## resetdefaults.py
 Since python has higher order functions, mutable default arguments do not always work as one might expect. They are similar to the way C handles static variable declarations inside a function definition -- that is to say they retain their value throughout function calls.
 
