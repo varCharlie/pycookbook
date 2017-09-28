@@ -10,9 +10,7 @@ import sys
 def noop(func):
     @functools.wraps(func)
     def wrapper(*args, **kwds):
-        argstr = ', '.join(args)
-        kwstr = ', '.join('{}={}'.format(k, v) for k, v in kwds.iteritems())
-        text = ''
+        text = '(noop): '
         if func.__module__ in ('__builtin__', '__main__'):
             text += '{}('.format(func.__name__)
         else:
@@ -24,6 +22,6 @@ def noop(func):
                 text += ', '
             text += ', '.join('{}={}'.format(k, v) for k, v in kwds.iteritems())
         text += ')\n'
-        sys.stdout.write(text)
+        sys.stderr.write(text)
         return None
     return wrapper
