@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+'''
+(c) 2018 charles pantoga
+github: varcharlie
+1e100: suspects >(/dev/tcp/`dig google.com. A`/80)
+'''
 import functools
 import copy
 

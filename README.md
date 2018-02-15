@@ -126,3 +126,10 @@ This is because ruby does not have first class functions.
 >>> func()
 [1]
 ```
+
+### randbin.py
+*Forthcoming*
+
+### memstate.py
+*Forthcoming*
+
