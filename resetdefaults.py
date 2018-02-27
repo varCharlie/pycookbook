@@ -7,6 +7,21 @@ import functools
 import copy
 
 def reset_defaults(func):
+    '''Decorator that forces default arguments to be re-initialized
+    with every invocation. Similar to Ruby's behavior.
+
+    IE:
+    >>> @resetdefaults
+    ... def example(k, v, x={}):
+    ...   x[k] = v
+    ...   print(x)
+    >>> example(1,1)
+    {1: 1}
+    >>> example(5,5)
+    {5: 5}
+    >>> example(3,3)
+    {3: 3}
+    '''
     @functools.wraps(func)
     def _closure(*args, **kwds):
         func_defaults = copy.deepcopy(func.__defaults__)
