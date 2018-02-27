@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 (c) 2018 charles pantoga
 github: varcharlie
@@ -5,11 +6,10 @@ github: varcharlie
 '''
 from collections import OrderedDict
 
-class Cache(object):
-    '''Python cache object. Usage:
+class Cache():
+    '''Python cache decorator
     class X(object):
-        def __init__(self):
-            self.func = Cache(self.func, size=64)
+        @Cache
         def func(self, i):
             print i
     '''

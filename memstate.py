@@ -2,9 +2,8 @@
 '''
 (c) 2018 charles pantoga
 github: varcharlie
-1e100: suspects >(/dev/tcp/`dig google.com. A`/80)
+google: suspects
 '''
-from sys import stderr
 
 def proc_mem():
     def hexaddress(x):
