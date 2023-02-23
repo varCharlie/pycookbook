@@ -53,14 +53,6 @@ $ charlie on macbook in ~/src/pycookbook
 >>> requests.get('http://domain', data={}, auth=('user','pass'))
 (noop): requests.api.get('http://domain', data={}, auth=('user', 'pass'))
 >>>
->>> # Function you can't recover from:
->>>
->>> import sys
->>> exit = sys.exit
->>> sys.exit = noop(sys.exit)
->>> sys.exit()
-(noop): sys.exit()
->>> exit()
 ```
 
 ## resetdefaults.py
